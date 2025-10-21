@@ -1,0 +1,31 @@
+@page {
+  size: A4;
+  margin: 2cm;
+}
+
+* {
+    print-color-adjust: exact !important;
+}
+
+#big-title, #rv_button, #formulaire{
+    display: none;
+}
+#frame{
+    width: 210mm;
+    height: 297mm;
+
+    /* background: #ffffff; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.centerOnPrintedPage .baggi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    left: 1mm;
+    top: 0;
+    /* height: 100vh; */
+}

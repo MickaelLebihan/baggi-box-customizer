@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mickaël Lebihan" />
+    <meta name="description" content="Baggi Box Customizer">
+    <meta name="keywords" content="Baggi, Box, Customizer">
+    <title>Custom Baggi Box</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="print.css" media="print">
+    <script src="logic.js"></script>
+</head>
+<body>
+    <h1 id="big-title">Baggi Box Customizer</h1>
+    <!-- <div id="image_placement"></div> -->
+     <button type="button" id="rv_button" onclick="FlipView()">recto/verso</button>
+     
+     <form action="post" id="formulaire">
+        <label for="image">image</label>
+        <input type="file" id="image-input" name="image"><br>
+
+        <label for="longueur">longueur</label>
+        <input type="number" id="longueur-input" name="longueur" value="18" onchange="changeSize()"><br>
+
+        <label for="largeur">largeur</label>
+        <input type="number" id="largeur-input" name="largeur" value="65"><br>
+
+        <label for="décalage-x">décalage-x</label>
+        <input type="number" id="décalage-x" name="décalage-x" value="2">
+     
+    </form>
+     <div id="frame">
+        
+        <div class="block centerOnPrintedPage" id="recto" style="display:block">
+
+            <h3>recto</h3>
+            <div class="baggi">
+                <div class="left" class="largeur" style="width: 65mm">
+                    <div class="side" id="face-4">
+                        <div id="triangle-4"></div>
+                        <div id="triangle-44"></div><p>4</p></div>
+                    <div class="side" id="face-5">
+                        <div id="triangle-5"></div>
+                        <div id="triangle-55"></div><p>5</p></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                </div>
+                <div class="center" class="longueur" style="width: 18mm">
+                    <div class="side">
+                    <h2 id="left-title">Le Rassemblement</h2>
+                    </div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                </div>
+                <div class="right" class="largeur" style="width: 65mm">
+                    <div class="side" id="face-1">
+                        <div id="triangle-1"></div>
+                        <div id="triangle-11"></div><p>1</p></div>
+                    <div class="side" id="face-2">
+                        <div id="triangle-2"></div>
+                        <div id="triangle-22"></div><p>2</p></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block centerOnPrintedPage" id="verso" style="display:none">
+
+            <h3>verso</h3>
+            <div class="baggi">
+                <div class="left" class="largeur" style="width: 65mm">
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side" id="face-4">
+                        <div id="triangle-4"></div><p>3</p>
+                    </div>
+                </div>
+                <div class="center" class="longueur" style="width: 18mm">
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side">
+                        <h2 id="right-title" >Le Rassemblement</h2>
+                    </div>
+                </div>
+                <div class="right" class="largeur" style="width: 65mm">
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side"></div>
+                    <div class="side" id="face-1"><div id="triangle-1"></div><p>6</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
