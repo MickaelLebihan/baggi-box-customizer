@@ -19,17 +19,31 @@
     margin: 20px;
 }
 
+#control-box{
+    display: block;
+    position: fixed;
+}
+
 .baggi{
     display: flex;
     flex-direction: row;
     position: relative
 }
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    width: 100%;
+    /* transform: scale(80%); */
+    /* border: 1px solid #000; */
+}
 #frame{
     width: 210mm;
     height: 297mm;
 
-    /* background: #90aeb6; */
+
+    background: #90aeb6;
     position: relative;
     display: flex;
     justify-content: center;
