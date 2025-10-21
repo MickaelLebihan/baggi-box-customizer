@@ -18,23 +18,22 @@
         </h1>
         <!-- <div id="image_placement"></div> -->
         
-        <form action="post" id="formulaire">
+        <div id="formulaire">
             <label for="image">image</label>
             <input type="file" id="image-input" name="image"><br>
 
-            <label for="longueur">longueur</label>
-            <input type="number" id="longueur-input" name="longueur" value="18" onchange="changeSize()"><br>
+            <label for="longueur">longueur (centre)</label>
+            <input type="number" id="longueur-input" name="longueur" value="18" onchange="changeSize('center')"><br>
 
-            <label for="largeur">largeur</label>
-            <input type="number" id="largeur-input" name="largeur" value="65"><br>
+            <label for="largeur">largeur (cotés)</label>
+            <input type="number" id="largeur-input" name="largeur" value="65" onchange="changeSize('side')"><br>
 
             <label for="décalage-x">décalage-x</label>
             <input type="number" id="décalage-x" name="décalage-x" value="2" title="Décalage a appliquer a l'impression"><br>
 
             <button type="button" id="rv_button" onclick="FlipView()">recto/verso</button>
             <button type="button" id="print_button" onclick="window.print()">print</button>
-
-        </form>
+        </div>
     </div>
 
     <div id="container">
@@ -44,7 +43,7 @@
 
                 <h3>recto</h3>
                 <div class="baggi">
-                    <div class="left" class="largeur" style="width: 65mm">
+                    <div class="left" id="recto-left" class="largeur" style="width: 65mm">
                         <div class="side" id="face-4">
                             <div id="triangle-4"></div>
                             <div id="triangle-44"></div><p>4</p></div>
@@ -54,7 +53,7 @@
                         <div class="side"></div>
                         <div class="side"></div>
                     </div>
-                    <div class="center" class="longueur" style="width: 18mm">
+                    <div class="center" id="recto-center" class="longueur" style="width: 18mm">
                         <div class="side">
                         <h2 id="left-title">Le Rassemblement</h2>
                         </div>
@@ -62,13 +61,14 @@
                         <div class="side"></div>
                         <div class="side"></div>
                     </div>
-                    <div class="right" class="largeur" style="width: 65mm">
+                    <div class="right" id="recto-right" class="largeur" style="width: 65mm">
                         <div class="side" id="face-1">
                             <div id="triangle-1"></div>
                             <div id="triangle-11"></div><p>1</p></div>
                         <div class="side" id="face-2">
                             <div id="triangle-2"></div>
-                            <div id="triangle-22"></div><p>2</p></div>
+                            <div id="triangle-22"></div>
+                        </div>
                         <div class="side"></div>
                         <div class="side"></div>
                     </div>
@@ -79,7 +79,7 @@
 
                 <h3>verso</h3>
                 <div class="baggi">
-                    <div class="left" class="largeur" style="width: 65mm">
+                    <div class="left" id="verso-left" class="largeur" style="width: 65mm">
                         <div class="side"></div>
                         <div class="side"></div>
                         <div class="side"></div>
@@ -87,7 +87,7 @@
                             <div id="triangle-4"></div><p>3</p>
                         </div>
                     </div>
-                    <div class="center" class="longueur" style="width: 18mm">
+                    <div class="center" id="verso-center" class="longueur" style="width: 18mm">
                         <div class="side"></div>
                         <div class="side"></div>
                         <div class="side"></div>
@@ -95,7 +95,7 @@
                             <h2 id="right-title" >Le Rassemblement</h2>
                         </div>
                     </div>
-                    <div class="right" class="largeur" style="width: 65mm">
+                    <div class="right" id="verso-right" class="largeur" style="width: 65mm">
                         <div class="side"></div>
                         <div class="side"></div>
                         <div class="side"></div>
